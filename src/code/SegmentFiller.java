@@ -43,9 +43,9 @@ public class SegmentFiller {
 
     private static void fillHorizontal(char[][] matrix, int index){
         char[] seg = matrix[index];
-        char c = index == 0 ? '-' : '_';
+        //char c = index == 0 ? '-' : '_';
         for (int i = 1; i < seg.length-1; i++) {
-            if(i%2 != 0) seg[i] = c;
+            if(i%2 != 0) seg[i] = '_';
 
         }
     }

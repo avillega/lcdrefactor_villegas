@@ -66,7 +66,7 @@ public class LCDDisplay {
                 out.flush();
             }catch(Exception e){
                 out.println("recuerde que ambos numeros deben ser digitos en base 10 (0123456789) y separados por comas");
-                e.printStackTrace();
+                //e.printStackTrace();
                 out.flush();
             }
         }
