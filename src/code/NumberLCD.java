@@ -49,6 +49,7 @@ public class NumberLCD {
 
     }
 
+
     public String getRowAsString(int row){
         return new String(matrix[row]);
     }

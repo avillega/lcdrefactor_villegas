@@ -15,9 +15,10 @@ public class LCDDisplay {
         int rows = numero[0].numberRows();
         StringBuilder stb = new StringBuilder();
         for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < numero.length; j++) {
-                stb.append(numero[j].getRowAsString(i) + "  ");
+            for (NumberLCD aNumero : numero) {
+                stb.append(aNumero.getRowAsString(i)).append(" ");
             }
+
             stb.append(System.lineSeparator());
         }
         return stb.toString();
