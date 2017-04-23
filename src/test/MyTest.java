@@ -17,7 +17,7 @@ public class MyTest {
     }
 
 
-    public void setUp2() {
+    private void setUp2() {
         number = "12345676";
         lcd = new LCDDisplay(2, number);
         numbers = lcd.converToNumberLCD(2, number);
@@ -47,7 +47,7 @@ public class MyTest {
 
         String actual = lcd.getString();
 
-        assertEquals("las representaciones no son iguales", exp, actual);
+        assertEquals("las representaciones como cadena no son iguales", exp, actual);
 
 
     }
