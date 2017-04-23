@@ -58,7 +58,7 @@ public class LCDDisplay {
             String[] vals = ln.split(",");
             try{
                 int size = Integer.parseInt(vals[0]);
-                int temp = Integer.parseInt(vals[1]);
+                long temp = Long.parseLong(vals[1]);
                 if(size == 0 || temp == 0) break;
                 String num = vals[1];
                 LCDDisplay lcd = new LCDDisplay(size, num);
