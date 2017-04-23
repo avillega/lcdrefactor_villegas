@@ -11,6 +11,11 @@ public class LCDDisplay {
         this.numero = converToNumberLCD(size, numero);
     }
 
+
+    /**
+     * returns the representation of a number as a String
+     * @return String: the string represetantion as a 7 segment LCD display
+     */
     public String getString(){
         int rows = numero[0].numberRows();
         StringBuilder stb = new StringBuilder();

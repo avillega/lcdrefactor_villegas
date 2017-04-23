@@ -2,9 +2,15 @@ package code;
 
 /**
  * Created by Andres Villegas on 2017-04-22.
- * this class represent sthe segment of a seven segment display, holds info about the segment
+ * This class has functionality to fill specific segments of a seven segment into a matrix
  */
 public class SegmentFiller {
+
+    /**
+     * method to fill especific segment of a specified matrix
+     * @param segment segment to be filled
+     * @param matrix matrix to be filled
+     */
     public static void fill(int segment, char[][] matrix){
         int mid = matrix.length/2;
         int col = 0;

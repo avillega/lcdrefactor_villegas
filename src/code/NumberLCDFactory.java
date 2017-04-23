@@ -17,6 +17,12 @@ public class NumberLCDFactory {
                                             {true, true, true, false, false, true, true}};
 
 
+    /**
+     * Creates a NumberLCD with the specific segments to represent the num setted to true
+     * @param size size of the lcd screen
+     * @param num one digit number to create as a NumberLCD
+     * @return
+     */
     public static NumberLCD createNumberLCD(int size, int num) {
         NumberLCD ret = new NumberLCD(size, num, SEGMENTS[num]);
 

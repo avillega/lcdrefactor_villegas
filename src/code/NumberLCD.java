@@ -49,11 +49,18 @@ public class NumberLCD {
 
     }
 
-
+    /**
+     * get the specific row in its string representation
+     * @param row to be returned
+     * @return String representation of the specfic row
+     */
     public String getRowAsString(int row){
         return new String(matrix[row]);
     }
 
+    /**
+     * build the matrix with the segments setted to true
+     */
     private void buildMatrix(){
         for (int i = 0; i < segments.length; i++) {
             if(segments[i]) SegmentFiller.fill(i, matrix);
