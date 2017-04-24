@@ -7,6 +7,13 @@ import java.util.Arrays;
  * Interface that specifies the functionalities of all number implementations
  * For the representation it uses a 7-segment representation, this means. the first segment is at top, then go clockwise,
  * leaving the middle segment as the last segment
+ *
+ *       _0_
+ *   5 |   | 1
+ *    |_6_|
+ *  4|   | 2
+ *  |_ _|
+ *    3
  */
 public class NumberLCD {
 

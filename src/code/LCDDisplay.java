@@ -2,6 +2,10 @@ package code;
 
 import java.io.*;
 
+
+/**
+ * Para el formato de impresión del numero se uso como referencia el ejemplo de salida del archivo README.md
+ */
 public class LCDDisplay {
 
     private NumberLCD[] numero;
@@ -51,7 +55,7 @@ public class LCDDisplay {
     public boolean isNumber(String test){
         char[] temp = test.toCharArray();
         for (char c: temp) {
-            if(!Character.isDigit(c)) throw new NumberFormatException("the string is not a number");
+            if(!Character.isDigit(c)) throw new NumberFormatException("the string is not a number for character: "+c);
         }
         return true;
     }
@@ -63,6 +67,7 @@ public class LCDDisplay {
 
         out.println("Bienvnido a el lcd display");
         out.println("Para empezar escriba el tamano de pantalla que desea (entre 1 y 10) y el numero en formato decimal que desea mostrar, separados por comas");
+        out.println("Ej: 2,12345");
         out.println("Para terminar escriba 0,0");
         out.flush();
 
@@ -72,6 +77,7 @@ public class LCDDisplay {
             String[] vals = ln.split(",");
             try{
                 int size = Integer.parseInt(vals[0]);
+                if(size > 10) throw new Exception("El tamaño de la pantalla no puede ser mayor a 10");
 
                 if(size == 0 || vals[1].equals("0")) break;
                 String num = vals[1];
@@ -81,6 +87,7 @@ public class LCDDisplay {
                 out.flush();
             }catch(Exception e){
                 out.println("recuerde que ambos numeros deben ser digitos en base 10 (0123456789) y separados por comas");
+                out.println(e.getMessage());
                 //e.printStackTrace();
                 out.flush();
             }
