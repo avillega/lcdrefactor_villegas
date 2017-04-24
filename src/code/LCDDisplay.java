@@ -39,12 +39,21 @@ public class LCDDisplay {
      */
     public NumberLCD[] converToNumberLCD(int size,String num){
         NumberLCD[] ret = new NumberLCD[num.length()];
+        isNumber(num);
         for (int i = 0; i < num.length(); i++) {
             //Converts the char to int
             int digit = num.charAt(i) - '0';
             ret[i] = NumberLCDFactory.createNumberLCD(size, digit);
         }
         return ret;
+    }
+
+    public boolean isNumber(String test){
+        char[] temp = test.toCharArray();
+        for (char c: temp) {
+            if(!Character.isDigit(c)) throw new NumberFormatException("the string is not a number");
+        }
+        return true;
     }
 
 
@@ -63,8 +72,8 @@ public class LCDDisplay {
             String[] vals = ln.split(",");
             try{
                 int size = Integer.parseInt(vals[0]);
-                long temp = Long.parseLong(vals[1]);
-                if(size == 0 || temp == 0) break;
+
+                if(size == 0 || vals[1].equals("0")) break;
                 String num = vals[1];
                 LCDDisplay lcd = new LCDDisplay(size, num);
                 out.write(lcd.getString());
